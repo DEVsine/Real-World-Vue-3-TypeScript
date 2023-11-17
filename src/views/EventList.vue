@@ -24,10 +24,10 @@ export default defineComponent({
   },
   created() {
     EventService.getEvents()
-      .then(response => {
+      .then((response: { data: EventItem[] }) => {
         this.events = response.data
       })
-      .catch(error => {
+      .catch((error: any) => {
         console.log(error)
       })
   }
